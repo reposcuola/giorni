@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giorni dalla mia nascita</title>
+</head>
+<body>
+  <span>Data di nascita: </span>
+  <input type="date" id="birthday" /><br />
+  <span>Giorni vissuti: </span>
+  <span id="days"></span>
+  <script>
+    const birthday = document.getElementById("birthday");
+    const days = document.getElementById("days");
+    
+    birthday.addEventListener("change", () => {
+      days.textContent = Math.ceil((Date.now() - new Date(birthday.value)) / (1000 * 60 * 60 * 24));
+    });
+  </script>
+</body>
+</html>
